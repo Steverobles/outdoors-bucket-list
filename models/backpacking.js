@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const hikingSchema = new Schema ({
+const backpackingSchema = new Schema ({
     trail: {
         type: String,
         required: true
@@ -25,4 +25,4 @@ const hikingSchema = new Schema ({
     }
 })
 
-module.exports = mongoose.model('Hiking', hikingSchema )
+module.exports = mongoose.model ('Backpacking', backpackingSchema)

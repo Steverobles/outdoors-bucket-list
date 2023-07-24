@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
-<form action="">
-<h2 id="hiking-title">Hikes</h2>
-<div class="add-hike">
-    <label >Backpacking Trails:</label>
+
+<form action="/outdoors" method="POST">
+<div class="add-trail">
+    <label >Hiking Trails:</label>
     <input type="text" placeholder="Trail" name="hike">
     <label >Location:</label>
     <input type="text" placeholder="City, State" name="location">
     <label >Distance:</label>
     <input type="text" placeholder="Distance" name="distance">
-    <select name="difficulty" id="backpacking-diff">
+    <select name="difficulty" id="hiking-diff">
         <option value="easy">Easy</option>
         <option value="medim">Medium</option>
         <option value="hard">Hard</option>
@@ -17,6 +17,16 @@
     <button class="submit-button"> Submit</button>
 </div>
 </form>
+
+<% hiking.forEach(function(h) { %>
+    <div class="hiking-details"> 
+        <p><% h.trail %></p>
+        <p><% h.location %></p>
+        <p><% h.distance %></p>
+        <p><% h.difficulty %></p>
+    </div>
+
+<%}) %>
 
 
 

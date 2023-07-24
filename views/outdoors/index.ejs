@@ -1,5 +1,36 @@
 <%- include('../partials/header') %>
 
+<table class="hiking-list">
+    <thead>
+        <tr>
+            <th>Your Hiking Bucket</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% hiking.forEach(function(h) {
+            <tr>
+                <td> <%h.trail%> </td>    
+                <td> <%h.location%> </td>    
+                <td> <%h.distance%> </td>    
+                <td> <%h.difficulty%> </td>    
+            </tr>
+
+        }) %>
+    </tbody>
+</table>
+
+<table class="backpacking-list">
+    <thead>
+        <tr>
+            <th>Your Backpacking Bucket</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+
 
 
 
