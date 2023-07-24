@@ -1,6 +1,22 @@
 <%- include('../partials/header') %>
 
-
+<form action="">
+<h2 id="hiking-title">Hikes</h2>
+<div class="add-hike">
+    <label >Hikes:</label>
+    <input type="text" placeholder="Trail" name="hike">
+    <label >Hikes:</label>
+    <input type="text" placeholder="City, State" name="location">
+    <label >Distance:</label>
+    <input type="text" placeholder="Distance" name="distance">
+    <select name="difficulty" id="hiking-diff">
+        <option value="easy">Easy</option>
+        <option value="medim">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+    <button class="submit-button"> Submit</button>
+</div>
+</form>
 
 
 

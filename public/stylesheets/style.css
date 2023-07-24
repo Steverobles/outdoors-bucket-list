@@ -38,6 +38,9 @@ body {
   padding-top: 30px;
 }
 
+#main-title {
+  padding-left: 20px;
+}
 
 
 .header-links {
@@ -53,3 +56,6 @@ body {
   font-size: 20px;
 }
 
+.header-links > a:hover {
+  color: grey;
+}
