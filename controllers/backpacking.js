@@ -4,9 +4,21 @@ const Outdoor = require('../models/outdoor')
 module.exports = {
     // viewBackpackingTrails,
     new: newBackpackingTrail,
-    create
+    create,
+    delete:deleteBackpackingTrail
 }
 
+
+async function deleteBackpackingTrail(req,res) {
+    try {
+        const id = req.params.id
+        await Backpacking.findOneAndDelete({ _id:id})
+        res.redirect('/outdoors')
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('Internal Server Error')
+    }
+}
 
 // async function viewBackpackingTrails(req, res) {
 //     try {
@@ -21,7 +33,7 @@ module.exports = {
 async function newBackpackingTrail(req,res) {
     try{
     const backpacking = await Backpacking.find({}).sort('trail')
-    res.render('backpacking/new', {title: 'Backpacking Trails', backpacking})
+    res.render('backpacking/new', {backpacking})
     } catch (err) {
         console.log(err)
         res.status(500).send('Internal Server Error')

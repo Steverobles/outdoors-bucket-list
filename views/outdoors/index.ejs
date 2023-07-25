@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th>Your Hiking Bucket</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,11 @@
                 <td><%=hike.location%> </td>    
                 <td><%=hike.distance%> </td>    
                 <td><%=hike.difficulty%> </td>    
+                <td>
+                    <form action="/outdoors/<%= hiking._id %>?_method=DELETE" method="post">
+                        <button type="submit">Completed</button>
+                    </form>
+                </td>
             </tr>
 
             <% }) %>
@@ -32,6 +38,11 @@
                 <td><%=bpacking.location%> </td>    
                 <td><%=bpacking.distance%> </td>    
                 <td><%=bpacking.difficulty%> </td>    
+                <td>
+                    <form action="/backpacking/<%= bpacking._id %>?_method=DELETE" method="post">
+                        <button type="submit">Completed</button>
+                    </form>
+                </td>
             </tr>
          <% }) %>
     </tbody>

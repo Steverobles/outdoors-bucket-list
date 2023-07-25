@@ -4,8 +4,21 @@ const Backpacking = require('../models/backpacking')
 module.exports = {
     index,
     new: newHikingTrail,
-    create
+    create,
+    delete: deleteHike
 }
+
+async function deleteHike(req,res) {
+    try {
+        const id = req.params.id
+        await Hiking.findOneAndDelete({ _id:id})
+        res.redirect('/outdoors')
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('Internal Server Error')
+    }
+}
+
 
 async function index(req, res) {
     const hiking = await Hiking.find({})
