@@ -4,7 +4,6 @@
     <thead>
         <tr>
             <th>Your Hiking Bucket</th>
-            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -15,7 +14,7 @@
                 <td><%=hike.distance%> </td>    
                 <td><%=hike.difficulty%> </td>    
                 <td>
-                    <form action="/outdoors/<%= hiking._id %>?_method=DELETE" method="post">
+                    <form action="/outdoors/<%= hike._id %>?_method=DELETE" method="post">
                         <button type="submit">Completed</button>
                     </form>
                 </td>

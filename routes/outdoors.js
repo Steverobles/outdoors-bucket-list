@@ -7,6 +7,6 @@ const hikingCtrl = require('../controllers/outdoors')
 router.get('/', hikingCtrl.index)
 router.get('/new', hikingCtrl.new)
 router.post('/', hikingCtrl.create)
-router.delete('/outdoors/:id', hikingCtrl.delete)
+router.delete('/:id', hikingCtrl.delete)
 
 module.exports = router;
