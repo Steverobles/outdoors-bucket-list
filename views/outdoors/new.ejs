@@ -4,7 +4,7 @@
 <form action="/outdoors" method="POST">
 <div class="add-trail">
     <label >Hiking Trails:</label>
-    <input type="text" placeholder="Trail" name="hike">
+    <input type="text" placeholder="Trail" name="trail">
     <label >Location:</label>
     <input type="text" placeholder="City, State" name="location">
     <label >Distance:</label>
@@ -17,16 +17,6 @@
     <button class="submit-button"> Submit</button>
 </div>
 </form>
-
-<% hiking.forEach(function(h) { %>
-    <div class="hiking-details"> 
-        <p><% h.trail %></p>
-        <p><% h.location %></p>
-        <p><% h.distance %></p>
-        <p><% h.difficulty %></p>
-    </div>
-
-<%}) %>
 
 
 

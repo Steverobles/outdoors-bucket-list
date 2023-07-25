@@ -25,4 +25,4 @@ const backpackingSchema = new Schema ({
     }
 })
 
-module.exports = mongoose.model ('Backpacking', backpackingSchema)
+module.exports = mongoose.model('Backpacking', backpackingSchema)

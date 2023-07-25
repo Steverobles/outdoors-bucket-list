@@ -4,29 +4,22 @@
 <form action="/backpacking" method="POST">
 <div class="add-trail">
     <label >Backpacking Trails:</label>
-    <input type="text" placeholder="Trail" name="hike">
+    <input type="text" placeholder="Trail" name="trail">
     <label >Location:</label>
     <input type="text" placeholder="City, State" name="location">
     <label >Distance:</label>
     <input type="text" placeholder="Distance" name="distance">
     <select name="difficulty" id="backpacking-diff">
-        <option value="easy">Easy</option>
-        <option value="medim">Medium</option>
-        <option value="hard">Hard</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
     </select>
     <button class="submit-button"> Submit</button>
 </div>
 </form>
 
-<% backpacking.forEach(function(b) { %>
-    <div class="backpacking-details"> 
-        <p><% b.trail %></p>
-        <p><% b.location %></p>
-        <p><% b.distance %></p>
-        <p><% b.difficulty %></p>
-    </div>
 
-<%}) %>
+
 
 
 

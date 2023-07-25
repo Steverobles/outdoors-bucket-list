@@ -7,15 +7,15 @@
         </tr>
     </thead>
     <tbody>
-        <% hiking.forEach(function(h) {
+        <% hiking.forEach(function(hike) { %>
             <tr>
-                <td> <%h.trail%> </td>    
-                <td> <%h.location%> </td>    
-                <td> <%h.distance%> </td>    
-                <td> <%h.difficulty%> </td>    
+                <td><%= hike.trail%> </td>    
+                <td><%=hike.location%> </td>    
+                <td><%=hike.distance%> </td>    
+                <td><%=hike.difficulty%> </td>    
             </tr>
 
-        }) %>
+            <% }) %>
     </tbody>
 </table>
 
@@ -26,7 +26,14 @@
         </tr>
     </thead>
     <tbody>
-        
+        <% backpacking.forEach(function(bpacking) { %> 
+            <tr>
+                <td><%=bpacking.trail%> </td>    
+                <td><%=bpacking.location%> </td>    
+                <td><%=bpacking.distance%> </td>    
+                <td><%=bpacking.difficulty%> </td>    
+            </tr>
+         <% }) %>
     </tbody>
 </table>
 
@@ -38,4 +45,5 @@
 
 
 
-<%- include('./partials/footer') %>
+
+<%- include('../partials/footer') %>
