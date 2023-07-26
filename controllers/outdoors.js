@@ -3,6 +3,7 @@ const Backpacking = require('../models/backpacking')
 
 module.exports = {
     index,
+    show,
     new: newHikingTrail,
     create,
     delete: deleteHike
@@ -30,6 +31,12 @@ async function index(req, res) {
     }
     res.render('outdoors/index', {title: 'Your Bucket', hiking, backpacking})
    
+}
+
+async function show(req,res) {
+    const hiking = await Hiking.findById(req.params.id)
+    const backpacking = await Backpacking.findById(req.params.id)
+    res.render('outdoors/show', {hiking, backpacking})
 }
 
 

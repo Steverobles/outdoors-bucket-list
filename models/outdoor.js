@@ -1,6 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+const commentsSchema = new Schema ({
+    text: {
+        type: String,
+        required: true
+    }
+})
+
 const hikingSchema = new Schema ({
     trail: {
         type: String,
@@ -22,7 +29,8 @@ const hikingSchema = new Schema ({
     difficulty: {
         type: String,
         enum: ['Easy', 'Medium', 'Hard']
-    }
+    },
+    comments:[commentsSchema]
 })
 
 module.exports = mongoose.model('Hiking', hikingSchema )

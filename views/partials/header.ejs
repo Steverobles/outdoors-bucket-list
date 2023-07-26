@@ -13,9 +13,15 @@
 <div class="header">
         <h2 id="main-title">Outdoors Bucket List</h2>
              <div class="header-links">
+                <a href="/outdoors/" >Your Bucket</a>
+                <%if (user) {%>
                 <a href="/outdoors/new" >Hiking</a>
                 <a href="/backpacking/new" >Backpacking</a>
-                <a href="/outdoors/" >Your Bucket</a>
+                <a href="/logout">Log Out</a>
+                <%} else { %>
+                <a href="/auth/google" class="login">Log In</a>
+                <% } %>
+                
             </div>   
 </div>
 
