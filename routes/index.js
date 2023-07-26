@@ -24,7 +24,7 @@ router.get('/oauth2callback',passport.authenticate(
 
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/outdoors');
+    res.redirect('/');
   });
 });
 

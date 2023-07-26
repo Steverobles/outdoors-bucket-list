@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+
+<% if(backpacking === null){%>
 <section class="hiking-comments">
     <div>Trail:</div>
     <div><%= hiking.trail %></div>
@@ -10,9 +12,18 @@
     <div>Difficulty:</div>
     <div><%= hiking.difficulty %></div>
 </section>
-
-
-
+<% } else { %>
+<section class="backpacking-comments">
+    <div>Trail:</div>
+    <div><%= backpacking.trail %></div>
+    <div>Location:</div>
+    <div><%= backpacking.location %></div>
+    <div>Distance:</div>
+    <div><%= backpacking.distance %></div>
+    <div>Difficulty:</div>
+    <div><%= backpacking.difficulty %></div>
+</section>
+<% } %>
 
 
 <%- include('../partials/footer') %>

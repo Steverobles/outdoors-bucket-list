@@ -1,5 +1,6 @@
 const Backpacking = require('../models/backpacking')
 const Outdoor = require('../models/outdoor')
+const User = require('../models/user')
 
 module.exports = {
     // viewBackpackingTrails,
@@ -42,6 +43,8 @@ async function newBackpackingTrail(req,res) {
 
 async function create(req,res) {
     try {
+        const user = await User.findOne({googleId:res.locals.user.googleId})
+        req.body.userId = user._id
         await Backpacking.create(req.body)
     } catch(err) {
         console.log(err)

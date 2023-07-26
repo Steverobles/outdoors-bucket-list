@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
-
+<div class="container">
 <table class="hiking-list">
     <thead>
         <tr>
             <th>Your Hiking Bucket</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody >
         <% hiking.forEach(function(hike) { %>
             <tr>
                 <td><%= hike.trail%> </td>    
@@ -38,7 +38,7 @@
                 <td><%=bpacking.location%> </td>    
                 <td><%=bpacking.distance%> </td>    
                 <td><%=bpacking.difficulty%> </td>    
-
+                <td><a href="/outdoors/<%=bpacking._id%>">Details</a></td>
                 <td>
                     <form action="/backpacking/<%= bpacking._id %>?_method=DELETE" method="post">
                         <button type="submit">Completed</button>
@@ -48,7 +48,7 @@
          <% }) %>
     </tbody>
 </table>
-
+</div>
 
 
 

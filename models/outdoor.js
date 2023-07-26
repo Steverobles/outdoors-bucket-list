@@ -30,6 +30,10 @@ const hikingSchema = new Schema ({
         type: String,
         enum: ['Easy', 'Medium', 'Hard']
     },
+    userId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
+    },
     comments:[commentsSchema]
 })
 

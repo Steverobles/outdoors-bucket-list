@@ -10,11 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<div class="header">
+<body>
+    <div class="header">
         <h2 id="main-title">Outdoors Bucket List</h2>
              <div class="header-links">
-                <a href="/outdoors/" >Your Bucket</a>
+                
                 <%if (user) {%>
+                  <a href="/outdoors/" >Your Bucket</a>
                 <a href="/outdoors/new" >Hiking</a>
                 <a href="/backpacking/new" >Backpacking</a>
                 <a href="/logout">Log Out</a>
@@ -26,7 +28,4 @@
 </div>
 
 
-
-
-<body>
     

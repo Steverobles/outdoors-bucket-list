@@ -1,5 +1,6 @@
 const Hiking = require('../models/outdoor')
 const Backpacking = require('../models/backpacking')
+const User = require('../models/user')
 
 module.exports = {
     index,
@@ -22,10 +23,12 @@ async function deleteHike(req,res) {
 
 
 async function index(req, res) {
-    const hiking = await Hiking.find({})
+    let hiking
     let backpacking 
     try {
-         backpacking = await Backpacking.find({})
+        const user = await User.findOne({googleId:res.locals.user.googleId})
+        hiking = await Hiking.find({userId:user._id})
+         backpacking = await Backpacking.find({userId:user._id})
     } catch(err) {
         res.status(500).send('Internal Server Error')
     }
@@ -47,6 +50,8 @@ async function newHikingTrail(req,res) {
 
 async function create(req,res) {
     try {
+        const user = await User.findOne({googleId:res.locals.user.googleId})
+        req.body.userId = user._id
         await Hiking.create(req.body)
     } catch(err) {
         console.log(err)
