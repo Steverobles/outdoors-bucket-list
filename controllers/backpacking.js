@@ -5,7 +5,8 @@ const User = require('../models/user')
 module.exports = {
     // viewBackpackingTrails,
     new: newBackpackingTrail,
-    make,
+    // make,
+    create,
     delete:deleteBackpackingTrail,
     edit,
     update
@@ -23,14 +24,26 @@ async function deleteBackpackingTrail(req,res) {
     }
 }
 
-// async function viewBackpackingTrails(req, res) {
+// async function create(req, res) {
+//     let backpacking
 //     try {
-//         const backpacking = await Backpacking.find({})
-//         res.render('outdoors/index', {title: 'Your Bucket', backpacking})
-//     } catch(err) {
-//         res.status(500).send('Internal Server Error')
+//       await Backpacking.create(req.body);
+//       res.redirect('/outdoors', {backpacking})
+//     } catch (err) {
+//       console.log(err);
 //     }
-// }
+//     res.redirect('/outdoors');
+//   }
+
+async function create(req, res) {
+    try {
+      const backpacking = await Backpacking.create(req.body);
+      res.redirect('/outdoors', { backpacking }); 
+    } catch (err) {
+      console.log(err);
+      res.redirect('/outdoors'); 
+  }
+}
 
 
 async function newBackpackingTrail(req,res) {
@@ -43,7 +56,7 @@ async function newBackpackingTrail(req,res) {
     }
 }
 
-async function make(req,res) {
+async function create(req,res) {
     try {
         const user = await User.findOne({googleId:res.locals.user.googleId})
         req.body.userId = user._id
@@ -65,15 +78,7 @@ async function edit(req, res) {
     }
   }
 
-//   async function update(req, res) {
-//     try {
-//       await Backpacking.findByIdAndUpdate(req.params.id, req.body);
-//       res.redirect('/backpacking');
-//     } catch (err) {
-//       console.log(err);
-//       res.status(500).send('Internal Server Error');
-//     }
-//   }
+
 async function update(req, res) {
     try {
       await Backpacking.findByIdAndUpdate(req.params.id, req.body);
