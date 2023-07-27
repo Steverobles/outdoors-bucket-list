@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'))
+
 app.use(session({
   secret:process.env.SECRET,
   resave:false,
@@ -41,6 +41,7 @@ app.use(function (req, res, next) {
   next();
 })
 
+app.use(methodOverride('_method'))
 app.use('/', indexRouter);
 app.use('/outdoors', outdoorsRouter);
 app.use('/', backpackingRouter)

@@ -67,6 +67,11 @@ a {
   color: white;
 }
 
+.login {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .container {
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -82,4 +87,68 @@ a {
 .hiking-list thead tr th,
 .backpacking-list thead tr th {
   text-align: center;
+}
+
+.add-trail {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.add-trail > input {
+  border-radius: 5%;
+  margin: 20px;
+  padding: 10px 25px 10px 25px;
+}
+
+form input::placeholder,
+form select::placeholder {
+  text-align: center;
+}
+
+input[type="text"] {
+  font-size: 20px;
+  text-align: center;
+}
+
+input[type="text"]:focus {
+  font-size: 20px
+}
+
+.add-trail> button {
+  margin: 20px;
+}
+
+.add-trail > button {
+  border-radius: 10%;
+  margin: 10%;
+  margin-left: 32%;
+  padding: 5px 15px;
+  padding-left: 10px;
+  font-size: 16px;
+  width: 100px;
+}
+
+.hiking-details {
+  display: grid;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  padding: 20px;
+  margin: 30px;
+}
+
+.backpacking-details {
+  display: grid;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  padding: 20px;
+  margin: 30px;
+}
+section > p {
+  margin: 7px;
 }

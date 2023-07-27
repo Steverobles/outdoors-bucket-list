@@ -6,7 +6,9 @@ module.exports = {
     // viewBackpackingTrails,
     new: newBackpackingTrail,
     create,
-    delete:deleteBackpackingTrail
+    delete:deleteBackpackingTrail,
+    edit,
+    update
 }
 
 
@@ -51,3 +53,32 @@ async function create(req,res) {
     }
     res.redirect('/backpacking/new')
 }
+
+async function edit(req, res) {
+    try {
+      const backpacking = await Backpacking.findById(req.params.id);
+      res.render('backpacking/edit', { backpacking });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+    }
+  }
+
+//   async function update(req, res) {
+//     try {
+//       await Backpacking.findByIdAndUpdate(req.params.id, req.body);
+//       res.redirect('/backpacking');
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).send('Internal Server Error');
+//     }
+//   }
+async function update(req, res) {
+    try {
+      await Backpacking.findByIdAndUpdate(req.params.id, req.body);
+      res.redirect('/outdoors/' + req.params.id);
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+    }
+  }

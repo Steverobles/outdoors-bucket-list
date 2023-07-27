@@ -2,27 +2,23 @@
 
 
 <% if(backpacking === null){%>
-<section class="hiking-comments">
-    <div>Trail:</div>
-    <div><%= hiking.trail %></div>
-    <div>Location:</div>
-    <div><%= hiking.location %></div>
-    <div>Distance:</div>
-    <div><%= hiking.distance %></div>
-    <div>Difficulty:</div>
-    <div><%= hiking.difficulty %></div>
-</section>
+    <section class="hiking-details">
+        <p>Trail: <%= hiking.trail %></p>
+        <p>Location: <%= hiking.location %></p>
+        <p>Distance: <%= hiking.distance %></p>
+        <p>Difficulty: <%= hiking.difficulty %></p>
+        <a href="/outdoors/<%= hiking._id %>/edit">Edit</a>
+    </section>
+    
 <% } else { %>
-<section class="backpacking-comments">
-    <div>Trail:</div>
-    <div><%= backpacking.trail %></div>
-    <div>Location:</div>
-    <div><%= backpacking.location %></div>
-    <div>Distance:</div>
-    <div><%= backpacking.distance %></div>
-    <div>Difficulty:</div>
-    <div><%= backpacking.difficulty %></div>
-</section>
+    <section class="backpacking-details">
+        <p>Trail: <%= backpacking.trail %> </p>
+        <p>Location: <%= backpacking.location %></p>
+        <p>Distance: <%= backpacking.distance %></p>
+        <p>Difficulty: <%= backpacking.difficulty %></p>
+        <a href="/backpacking/<%= backpacking._id %>/edit">Edit</a>
+    </section>
+    
 <% } %>
 
 

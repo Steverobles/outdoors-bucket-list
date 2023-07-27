@@ -7,7 +7,9 @@ module.exports = {
     show,
     new: newHikingTrail,
     create,
-    delete: deleteHike
+    delete: deleteHike,
+    edit,
+    update
 }
 
 async function deleteHike(req,res) {
@@ -58,3 +60,23 @@ async function create(req,res) {
     }
     res.redirect('/outdoors/new')
 }
+
+async function edit(req, res) {
+    try {
+      const hiking = await Hiking.findById(req.params.id);
+      res.render('outdoors/edit', { hiking });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+    }
+  }
+
+  async function update(req, res) {
+    try {
+      await Hiking.findByIdAndUpdate(req.params.id, req.body);
+      res.redirect('/outdoors/' + req.params.id);
+    } catch (err) {
+      console.log(err);
+      res.status(500).send('Internal Server Error');
+    }
+  }

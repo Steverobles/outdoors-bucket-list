@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<section class="edit-hiking-form">
+  <h2>Edit Hiking Details</h2>
+  <form action="/outdoors/<%= hiking._id %>?_method=PUT" method="post">
+    <div class="edit-field">
+      <label>Trail:</label>
+      <input type="text" name="trail" value="<%= hiking.trail %>" />
+    </div>
+    <div class="edit-field">
+      <label>Location:</label>
+      <input type="text" name="location" value="<%= hiking.location %>" />
+    </div>
+    <div class="edit-field">
+      <label>Distance:</label>
+      <input type="text" name="distance" value="<%= hiking.distance %>" />
+    </div>
+    <div class="edit-field">
+      <label>Difficulty:</label>
+      <select name="difficulty">
+        <option value="Easy" <%= hiking.difficulty === 'Easy' ? 'selected' : '' %>>Easy</option>
+        <option value="Medium" <%= hiking.difficulty === 'Medium' ? 'selected' : '' %>>Medium</option>
+        <option value="Hard" <%= hiking.difficulty === 'Hard' ? 'selected' : '' %>>Hard</option>
+      </select>
+    </div>
+    <button type="submit">Update</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
