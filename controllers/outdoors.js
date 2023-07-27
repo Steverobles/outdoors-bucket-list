@@ -29,7 +29,9 @@ async function index(req, res) {
     let backpacking 
     try {
         const user = await User.findOne({googleId:res.locals.user.googleId})
+        console.log(user)
         hiking = await Hiking.find({userId:user._id})
+        
          backpacking = await Backpacking.find({userId:user._id})
     } catch(err) {
         res.status(500).send('Internal Server Error')
