@@ -5,7 +5,7 @@ const User = require('../models/user')
 module.exports = {
     // viewBackpackingTrails,
     new: newBackpackingTrail,
-    create,
+    make,
     delete:deleteBackpackingTrail,
     edit,
     update
@@ -43,7 +43,7 @@ async function newBackpackingTrail(req,res) {
     }
 }
 
-async function create(req,res) {
+async function make(req,res) {
     try {
         const user = await User.findOne({googleId:res.locals.user.googleId})
         req.body.userId = user._id
@@ -58,6 +58,7 @@ async function edit(req, res) {
     try {
       const backpacking = await Backpacking.findById(req.params.id);
       res.render('backpacking/edit', { backpacking });
+     
     } catch (err) {
       console.log(err);
       res.status(500).send('Internal Server Error');

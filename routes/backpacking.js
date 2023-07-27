@@ -4,7 +4,7 @@ const backpackingCtrl = require('../controllers/backpacking')
 
 // router.get('/backpacking', backpackingCtrl.viewBackpackingTrails)
 router.get('/backpacking/new', backpackingCtrl.new)
-router.post('/backpacking', backpackingCtrl.create)
+router.post('/backpacking', backpackingCtrl.make)
 router.delete('/backpacking/:id', backpackingCtrl.delete)
 
 // Route to render the update form for backpacking
