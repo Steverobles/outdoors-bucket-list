@@ -1,6 +1,5 @@
 # outdoors-bucket-list
-In Outdoors Bucket List you can add all the hiking trails and backpacking trails that you would like to accomplish along with adding the location, distance and difficulty. 
-Also including the features of updating a trail and deleting a trail.
+In Outdoors Bucket List you can add all the hiking trails and backpacking trails that you would like to accomplish along with adding the location, distance and difficulty. Also including the features of updating a trail and a button for completing a trail.
 
 ![Screenshot 2023-07-27 at 11 26 49 PM](https://github.com/Steverobles/outdoors-bucket-list/assets/126551900/a2894b1d-4330-481a-bba9-cff151581a25)
 ![Screenshot 2023-07-27 at 11 27 14 PM](https://github.com/Steverobles/outdoors-bucket-list/assets/126551900/2bdf66c3-c769-4b51-a253-0fa5919a31f3)
