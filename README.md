@@ -5,7 +5,7 @@ Also including the features of updating a trail and deleting a trail.
 ![Screenshot 2023-07-27 at 11 26 49 PM](https://github.com/Steverobles/outdoors-bucket-list/assets/126551900/a2894b1d-4330-481a-bba9-cff151581a25)
 ![Screenshot 2023-07-27 at 11 27 14 PM](https://github.com/Steverobles/outdoors-bucket-list/assets/126551900/2bdf66c3-c769-4b51-a253-0fa5919a31f3)
 
-Technologies used for this Website include Express, Node.js, MongoDB, Mongoose, HTML, CSS, and JavaScript
+Technologies used for this Website include Express, Node.js, MongoDB, Mongoose, EJS, HTML, CSS, and JavaScript
 
 
 Website Link: https://outdoors-bucket-list-5dddbbf5e3d1.herokuapp.com/
