@@ -30,7 +30,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  margin-bottom: 500px;
+  margin-bottom: 1000px;
 }
 
 
@@ -55,7 +55,7 @@ body {
   padding-left: 65%;
 }
 .header-links > a {
-  padding-left: 25px;
+  padding-left: 15px;
   padding-right: 15px;
   text-decoration: none;
   color: white;
@@ -79,6 +79,14 @@ a {
   grid-template-columns: 1fr 1fr;
   gap: 150px;
   font-size: 20px;
+}
+
+.hiking-list-title {
+  text-decoration: underline;
+}
+
+.backpacking-list-title {
+  text-decoration: underline;
 }
 
 .hiking-list,
