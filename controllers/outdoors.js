@@ -60,7 +60,7 @@ async function create(req,res) {
     } catch(err) {
         console.log(err)
     }
-    res.redirect('/outdoors/new')
+    res.redirect('/outdoors')
 }
 
 async function edit(req, res) {

@@ -24,26 +24,17 @@ async function deleteBackpackingTrail(req,res) {
     }
 }
 
+
+
 // async function create(req, res) {
-//     let backpacking
 //     try {
-//       await Backpacking.create(req.body);
-//       res.redirect('/outdoors', {backpacking})
+//       const backpacking = await Backpacking.create(req.body);
+//       res.redirect('/outdoors', { backpacking }); 
 //     } catch (err) {
 //       console.log(err);
-//     }
-//     res.redirect('/outdoors');
+//       res.redirect('/outdoors'); 
 //   }
-
-async function create(req, res) {
-    try {
-      const backpacking = await Backpacking.create(req.body);
-      res.redirect('/outdoors', { backpacking }); 
-    } catch (err) {
-      console.log(err);
-      res.redirect('/outdoors'); 
-  }
-}
+// }
 
 
 async function newBackpackingTrail(req,res) {
@@ -64,7 +55,7 @@ async function create(req,res) {
     } catch(err) {
         console.log(err)
     }
-    res.redirect('/backpacking/new')
+    res.redirect('/outdoors')
 }
 
 async function edit(req, res) {
